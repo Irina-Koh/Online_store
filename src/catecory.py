@@ -1,5 +1,6 @@
 class Category:
     """Класс для представления категории."""
+
     name: str
     description: str
     products: list
@@ -19,4 +20,4 @@ class Category:
 
     @property
     def list_products(self):
-        return "\\n".join(f'{product.name} {product.price} руб. {product.quantity} шт.' for product in self._products)
+        return "\\n".join(f"{product.name} {product.price} руб. {product.quantity} шт." for product in self._products)

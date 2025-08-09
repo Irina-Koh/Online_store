@@ -2,8 +2,6 @@ from src.product import Product
 from src.catecory import Category
 
 
-
-
 def test_category_init(first_category, second_category):
     assert first_category.name == "Смартфоны"
     assert (
@@ -25,6 +23,7 @@ def test_add_product():
     category.add_product(product)
     assert len(category._products) == 1
     assert category._products[0] == product
+
 
 def test_list_products():
     category = Category("Смартфоны", "Лучшие смартфоны на рынке", [])

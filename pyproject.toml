@@ -3,7 +3,7 @@ name = "e-commerce"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Irina Koh",email = "you@example.com"}
+    {name = "Irina Koh",email = "arina2009.91@mail.ru"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
