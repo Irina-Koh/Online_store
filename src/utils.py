@@ -39,7 +39,7 @@ def list_products_and_category_from_json(data: dict) -> list:
         for product in category_data["products"]:
             products.append(Product(**product))
         category_data["products"] = products
-        categories.append(Category(**catecory_data))
+        categories.append(Category(**category_data))
     return categories
 
 

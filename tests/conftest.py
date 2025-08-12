@@ -4,7 +4,7 @@ from src.catecory import Category
 
 
 @pytest.fixture
-def first_catecory():
+def first_category():
     return Category(
         name="Смартфоны",
         description="Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
@@ -16,7 +16,7 @@ def first_catecory():
 
 
 @pytest.fixture
-def second_catecory():
+def second_category():
     return Category(
         name="Телевизоры",
         description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
