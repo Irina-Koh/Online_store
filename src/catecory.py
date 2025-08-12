@@ -6,6 +6,7 @@ class Category:
     products: list
     number_of_categories = 0
     number_of_products = 0
+    product_count = 0
 
     def __init__(self, name, description, products):
         """Метод для инициализации экземпляра класса. Задаем значения атрибутам экземпляра."""
@@ -17,7 +18,8 @@ class Category:
 
     def add_product(self, product_new):
         self._products.append(product_new)
+        self.product_count += 1
 
     @property
-    def list_products(self):
+    def products(self):
         return "\\n".join(f"{product.name} {product.price} руб. {product.quantity} шт." for product in self._products)
