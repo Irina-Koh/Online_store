@@ -33,3 +33,11 @@ def test_price_setter_invalid():
     product = Product("iPhone 13", 999.99, 10)
     with pytest.raises(ValueError):
         product.price = -100
+
+
+def test_product_str(product):
+    assert str(product) == """55" QLED 4K, 123000.0 руб. Остаток: 7 шт."""
+
+
+def test_product_add(product1, product2):
+    assert product1 + product2 == 2580000.0
