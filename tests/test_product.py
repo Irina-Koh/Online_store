@@ -19,18 +19,18 @@ def test_new_product():
 
 
 def test_price_getter():
-    product = Product("iPhone 13", 999.99, 10)
+    product = Product("iPhone 13", "Лучший смартфон на рынке",999.99, 10)
     assert product.price == 999.99
 
 
 def test_price_setter_valid():
-    product = Product("iPhone 13", 999.99, 10)
+    product = Product("iPhone 13", "Лучший смартфон на рынке", 999.99, 10)
     product.price = 1099.99
     assert product.price == 1099.99
 
 
 def test_price_setter_invalid():
-    product = Product("iPhone 13", 999.99, 10)
+    product = Product("iPhone 13", "Лучший смартфон на рынке", - 100, 10)
     with pytest.raises(ValueError):
         product.price = -100
 

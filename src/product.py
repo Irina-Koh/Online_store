@@ -35,6 +35,6 @@ class Product:
     @price.setter
     def price(self, value):
         if value <= 0:
-            print("Цена не должна быть нулевая или отрицательная")
+            raise ValueError("Цена не должна быть нулевой или отрицательной")
         else:
             self._price = value
