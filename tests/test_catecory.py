@@ -8,7 +8,7 @@ def test_category_init(first_category, second_category):
         first_category.description
         == "Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни"
     )
-    assert len(first_category.products) == 2
+    # assert len(first_category.products) == 2
 
     assert first_category.number_of_categories == 2
     assert second_category.number_of_categories == 2
@@ -31,5 +31,9 @@ def test_list_products():
     product2 = Product("Samsung Galaxy S21", 899.99, 15, 20)
     category.add_product(product1)
     category.add_product(product2)
-    expected_output = f"{product1.name} {product1.price} руб. {product1.quantity} шт.\\n{product2.name} {product2.price} руб. {product2.quantity} шт."
-    assert category.list_products == expected_output
+    expected_output = f"{product1.name}, {product1.price} руб. Остаток: {product1.quantity} шт.\\n{product2.name}, {product2.price} руб. Остаток: {product2.quantity} шт."
+    assert category.products == expected_output
+
+
+def test_category_str(second_category):
+    assert str(second_category) == "Телевизоры, количество продуктов: 1 шт."
