@@ -1,5 +1,5 @@
 import pytest
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 from src.catecory import Category
 
 
@@ -39,3 +39,47 @@ def product2():
     return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
 
 
+@pytest.fixture
+def product3():
+    return Smartphone(
+        name="Samsung Galaxy",
+        description="Флагманский смартфон",
+        price=60000,
+        quantity=100,
+        efficiency="Высокая производительность",
+        model="S23 Ultra",
+        memory="512 ГБ",
+        color="Чёрный",
+    )
+
+
+@pytest.fixture
+def product4():
+    return LawnGrass(
+        name="Газонная трава 'Экстра'",
+        description="Высококачественный сорт газонной травы.",
+        price=500,
+        quantity=100,
+        country="Голландия",
+        germination_period="7-10 дней",
+        color="Ярко-зеленый",
+    )
+
+
+@pytest.fixture
+def product5():
+    return Smartphone(
+        name="Samsung Galaxy",
+        description="Флагманский смартфон",
+        price=60000,
+        quantity=100,
+        efficiency="Высокая производительность",
+        model="S24 Ultra",
+        memory="515 ГБ",
+        color="Красный",
+    )
+
+
+@pytest.fixture
+def invalid_product():
+    return "Некорректный объект"

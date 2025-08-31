@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 from src.catecory import Category
 
@@ -17,12 +19,24 @@ def test_category_init(first_category, second_category):
     assert second_category.number_of_products == 3
 
 
+class Developer:
+    pass
+
+
 def test_add_product():
     category = Category("Смартфоны", "Лучшие смартфоны на рынке", [])
     product = Product("iPhone 13", 999.99, 10, 11)
     category.add_product(product)
     assert len(category._products) == 1
     assert category._products[0] == product
+
+
+def test_add_invalid_product(invalid_product):
+    """Тестируем попытку добавить некорректный объект."""
+    category = Category("Смартфоны", "Лучшие смартфоны на рынке", [])
+    with pytest.raises(TypeError) as excinfo:
+        category.add_product(invalid_product)
+    assert f'Объект "{invalid_product}" не является продуктом.' in str(excinfo.value)
 
 
 def test_list_products():
