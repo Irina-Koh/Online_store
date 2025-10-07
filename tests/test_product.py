@@ -59,8 +59,8 @@ def test_smartphone_init(product3):
 
 
 def test_lawn_grass_init(product4):
-    assert product4.name == "Газонная трава 'Экстра'"
-    assert product4.description == "Высококачественный сорт газонной травы."
+    assert product4.name == "Газонная трава Экстра"
+    assert product4.description == "Высококачественный сорт газонной травы"
     assert product4.price == 500
     assert product4.quantity == 100
     assert product4.country == "Голландия"

@@ -7,7 +7,8 @@ from src.catecory import Category
 def first_category():
     return Category(
         name="Смартфоны",
-        description="Смартфоны, как средство не только коммуникации, но и получение дополнительных функций для удобства жизни",
+        description="Смартфоны, как средство не только коммуникации, "
+        "но и получение дополнительных функций для удобства жизни",
         products=[
             Product("Samsung Galaxy C23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5),
             Product("Iphone 15", "512GB, Gray space", 210000.0, 8),
@@ -19,7 +20,8 @@ def first_category():
 def second_category():
     return Category(
         name="Телевизоры",
-        description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+        description="Современный телевизор, который позволяет "
+        "наслаждаться просмотром, станет вашим другом и помощником",
         products=[Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)],
     )
 
@@ -56,8 +58,8 @@ def product3():
 @pytest.fixture
 def product4():
     return LawnGrass(
-        name="Газонная трава 'Экстра'",
-        description="Высококачественный сорт газонной травы.",
+        name="Газонная трава Экстра",
+        description="Высококачественный сорт газонной травы",
         price=500,
         quantity=100,
         country="Голландия",
