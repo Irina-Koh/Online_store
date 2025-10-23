@@ -2,11 +2,14 @@ from src.product import Product
 import pytest
 
 
-def test_product_init(product):
+def test_product_init(product, capsys):
     assert product.name == '55" QLED 4K'
     assert product.description == "Фоновая подсветка"
     assert product.price == 123000.0
     assert product.quantity == 7
+    with pytest.raises(ValueError) as excinfo:
+        product_add = Product('56" QLED 4K', "Фоновая подсветка", 133000.0, 0)
+    assert str(excinfo.value) == "Товар с нулевым количеством не может быть добавлен"
 
 
 def test_new_product():
@@ -31,8 +34,9 @@ def test_price_setter_valid():
 
 def test_price_setter_invalid():
     product = Product("iPhone 13", "Лучший смартфон на рынке", -100, 10)
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError) as excinfo:
         product.price = -100
+    assert str(excinfo.value) == "Цена не должна быть нулевой или отрицательной"
 
 
 def test_product_str(product):
