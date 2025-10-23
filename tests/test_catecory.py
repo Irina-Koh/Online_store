@@ -53,3 +53,8 @@ def test_list_products():
 
 def test_category_str(second_category):
     assert str(second_category) == "Телевизоры, количество продуктов: 1 шт."
+
+
+def test_middle_price(first_category, category_raise):
+    assert first_category.middle_price() == 195000.0
+    assert category_raise.middle_price() == 0
