@@ -29,6 +29,17 @@ class Category:
             raise TypeError(f'Объект "{product_new}" не является продуктом.')
         self.product_count += 1
 
+    def middle_price(self):
+        if len(self._products) == 0:
+            return 0
+
+        total_sum = sum(product._price for product in self._products)
+        try:
+            avg_price = total_sum / len(self._products)
+            return avg_price
+        except ZeroDivisionError:
+            return 0
+
     @property
     def products(self):
         return "\\n".join(str(product) for product in self._products)

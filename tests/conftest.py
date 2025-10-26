@@ -27,6 +27,16 @@ def second_category():
 
 
 @pytest.fixture
+def category_raise():
+    return Category(
+        name="Смартфоны",
+        description="Смартфоны, как средство не только коммуникации, "
+        "но и получение дополнительных функций для удобства жизни",
+        products=[],
+    )
+
+
+@pytest.fixture
 def product():
     return Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
 
